@@ -3,19 +3,21 @@ function staffMember(name,age,email,salBruto){
     this.age = age;
     this.email = email;
     
-    var bankBalance = bankBalance;
+    var bankBalance = salBruto;
     
     this.getBalance = function(password){
         if(password === "1234"){
-            return bankBalance;
+            //return bankBalance;
+            console.log("# BankBalance..: " + bankBalance);
         }else{
-            return "Wrong password!";
+            //return "Wrong password!";
+            console.log("Wrong password!");
         }
     }; 
 };
 
 var jack = new staffMember("Jack Spearrow",29,"jack@gmail.com",7500);
-var bob = new staffMember("Bob Dylan",28,"bob@gmail.com",7501);
+var bob = new staffMember("Bob Dylaen",28,"bob@gmail.com",7501);
 var fred = new staffMember("Fred Owne", 32, "freed@gmail.com", 6200);
 
 var devOps = [jack,bob,fred];
@@ -27,10 +29,35 @@ function listAll(array){
     }
 };
 
+function search(array,name){
+    for(var i = 0; i < array.length; i++){
+        if(array[i].name === name){
+            console.log("Staff OK : " + array[i].name);
+            console.log("# Staff Member #");
+            console.log("# Name...: " + array[i].name);
+            console.log("# Age....: " + array[i].age);
+            console.log("# email..: " + array[i].email);
+            array[i].getBalance(prompt("Password..: "));
+        }
+    }
+};
+
+
+function searchLetter(array,letter){
+    for(var i = 0; i < array.length; i++){
+        name = array[i].name.toLowerCase();
+        //console.log(name);
+        for(var j = 0; j < name.length; j++){
+            if(name[j] === letter){
+                console.log("Staff OK : " + name.toUpperCase());
+            }
+        }
+    }
+};
 
 
 function addStaff(){
-    confirm("ADD StaffMember");
+    confirm("# ADD StaffMember #");
     staffMember(prompt("Name...: "),prompt("Age...: "),prompt("email...: "),prompt("salBruto...: "));
 };
 
