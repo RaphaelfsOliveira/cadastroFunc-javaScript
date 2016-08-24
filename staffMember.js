@@ -7,11 +7,11 @@ function staffMember(name,age,email,salBruto){
     
     this.getBalance = function(password){
         if(password === "1234"){
-            //return bankBalance;
-            console.log("# BankBalance..: " + bankBalance);
+            return bankBalance;
+            //console.log("# BankBalance..: " + bankBalance);
         }else{
-            //return "Wrong password!";
-            console.log("Wrong password!");
+            return "Wrong password!";
+            //console.log("# Wrong password!");
         }
     }; 
 };
@@ -23,10 +23,26 @@ var fred = new staffMember("Fred Owne", 32, "freed@gmail.com", 6200);
 var devOps = [jack,bob,fred];
 
 
-function listAll(array){
+function listName(array){
     for(var i = 0; i < array.length; i++){
-        console.log(array[i]);
+        console.log(array[i].name);
     }
+};
+
+function printStaff(obj) {
+    
+    console.log("# Staff Member #");
+    console.log("# Name...: " + obj.name);
+    console.log("# Age....: " + obj.age);
+    console.log("# email..: " + obj.email);
+    console.log("# Bank...: " + obj.getBalance(prompt("Password","write here...")));
+    console.log("");
+};
+
+function list() {
+	for (var i = 0; i < devOps.length; i++) {
+		printStaff(devOps[i]);
+	}
 };
 
 function search(array,name){
@@ -37,28 +53,37 @@ function search(array,name){
             console.log("# Name...: " + array[i].name);
             console.log("# Age....: " + array[i].age);
             console.log("# email..: " + array[i].email);
-            array[i].getBalance(prompt("Password..: "));
+            console.log("Bank.....: " + array[i].getBalance(prompt("Password..: ")));
         }
     }
 };
 
-
+//update function
 function searchLetter(array,letter){
     for(var i = 0; i < array.length; i++){
         name = array[i].name.toLowerCase();
         //console.log(name);
         for(var j = 0; j < name.length; j++){
-            if(name[j] === letter){
-                console.log("Staff OK : " + name.toUpperCase());
+            for(var k = 0; k < letter.length; k++){
+                if(name[j] === letter[k]){
+                    console.log("Staff OK : " + name.toUpperCase());
+                }
             }
         }
     }
 };
 
-
-function addStaff(){
-    confirm("# ADD StaffMember #");
-    staffMember(prompt("Name...: "),prompt("Age...: "),prompt("email...: "),prompt("salBruto...: "));
+//new function to add at the github
+function addStaff(objName,array){
+    
+    objName = new staffMember(prompt("Name...: "),prompt("Age...: "),prompt("email...: "),prompt("salBruto...: "));
+    
+    array[array.length] = objName;
+    
+    confirm("# StaffMember added #");
 };
+
+
+
 
 
