@@ -87,7 +87,7 @@ function addStaff(objName,array){
 
 
 /// test
-function choseOption(option){
+function choseOption(){
     
     console.log("# System Staff Members #");
     console.log("");
@@ -97,8 +97,10 @@ function choseOption(option){
     console.log("# 2 - Add Staff              #");
     console.log("# 3 - Search Staff           #");
     console.log("# 4 - Search Staff by Letter #");
+    
+    opt = prompt("option");
 
-    switch(option){
+    switch(opt){
         
         case "2":
             console.log("# Add Staff #");
@@ -120,7 +122,10 @@ function choseOption(option){
             searchLetter(devOps,prompt("Write the one letter:"));
             break;
             
-            
+        default :
+        console.log("Wrong option");
+        choseOption();
+        break;
     }
 };
 
