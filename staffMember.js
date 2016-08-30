@@ -86,5 +86,41 @@ function addStaff(objName,array){
 
 
 
+/// test
+function choseOption(option){
+    
+    console.log("# System Staff Members #");
+    console.log("");
+    console.log("Chose the option..");
+    console.log("##############################");
+    console.log("# 1 - List All Staffs        #");
+    console.log("# 2 - Add Staff              #");
+    console.log("# 3 - Search Staff           #");
+    console.log("# 4 - Search Staff by Letter #");
 
+    switch(option){
+        
+        case "2":
+            console.log("# Add Staff #");
+            addStaff(prompt("Input the new Staff Member:","write here"),devOps);
+            break;
+            
+        case "1":
+            console.log("# List All Staffs #");
+            list(devOps);
+            break;
+            
+        case "3":
+            console.log("# Search Staff #");
+            search(devOps,prompt("Full name of the staff:","here.."));
+            break;
+            
+        case "4":
+            console.log("# Search Staff by Letter #");
+            searchLetter(devOps,prompt("Write the one letter:","ex: "J" "));
+            break;
+            
+            
+    }
+};
 
