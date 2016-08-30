@@ -117,7 +117,7 @@ function choseOption(option){
             
         case "4":
             console.log("# Search Staff by Letter #");
-            searchLetter(devOps,prompt("Write the one letter:","ex: "J" "));
+            searchLetter(devOps,prompt("Write the one letter:"));
             break;
             
             
