@@ -39,9 +39,9 @@ function printStaff(obj) {
     console.log("");
 };
 
-function list() {
-	for (var i = 0; i < devOps.length; i++) {
-		printStaff(devOps[i]);
+function list(array) {
+	for (var i = 0; i < array.length; i++) {
+		printStaff(array[i]);
 	}
 };
 
