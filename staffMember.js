@@ -58,7 +58,7 @@ function search(array,name){
     }
 };
 
-//update function
+
 function searchLetter(array,letter){
     for(var i = 0; i < array.length; i++){
         name = array[i].name.toLowerCase();
@@ -73,7 +73,7 @@ function searchLetter(array,letter){
     }
 };
 
-//new function to add at the github
+
 function addStaff(objName,array){
     
     objName = new staffMember(prompt("Name...: "),prompt("Age...: "),prompt("email...: "),prompt("salBruto...: "));
