@@ -48,12 +48,13 @@ function list(array) {
 function search(array,name){
     for(var i = 0; i < array.length; i++){
         if(array[i].name === name){
-            console.log("Staff OK : " + array[i].name);
-            console.log("# Staff Member #");
-            console.log("# Name...: " + array[i].name);
-            console.log("# Age....: " + array[i].age);
-            console.log("# email..: " + array[i].email);
-            console.log("Bank.....: " + array[i].getBalance(prompt("Password..: ")));
+            console.log(" searching... ");
+            console.log("");
+            printStaff(array[i]);
+            break;
+        }else{
+            console.log("staff not found...");
+            break;
         }
     }
 };
