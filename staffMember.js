@@ -97,6 +97,7 @@ function choseOption(){
     console.log("# 2 - Add Staff              #");
     console.log("# 3 - Search Staff           #");
     console.log("# 4 - Search Staff by Letter #");
+    console.log("# 0 - finishing program      #");
     
     opt = prompt("option");
 
@@ -105,21 +106,29 @@ function choseOption(){
         case "2":
             console.log("# Add Staff #");
             addStaff(prompt("Input the new Staff Member:","write here"),devOps);
+            choseOption();
             break;
             
         case "1":
             console.log("# List All Staffs #");
             list(devOps);
+            choseOption();
             break;
             
         case "3":
             console.log("# Search Staff #");
             search(devOps,prompt("Full name of the staff:","here.."));
+            choseOption();
             break;
             
         case "4":
             console.log("# Search Staff by Letter #");
             searchLetter(devOps,prompt("Write the one letter:"));
+            choseOption();
+            break;
+            
+        case "0":
+            console.log("# finishing program #");
             break;
             
         default :
@@ -128,4 +137,3 @@ function choseOption(){
         break;
     }
 };
-
